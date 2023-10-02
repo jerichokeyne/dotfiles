@@ -1,0 +1,16 @@
+# vim: ft=gitconfig
+[user]
+	name = Jericho Keyne
+	email = jerichokeyne@gmail.com
+
+[url "git@github.houston.softwaregrp.net:"]
+	insteadOf = https://github.houston.softwaregrp.net/
+
+[url "git@gitlab.com:"]
+	insteadOf = https://gitlab.com/
+
+; If in any subdirectory of `~/work*` (so also `~/work-aa`, `~/work_notes`, etc.)
+; Include the file ~/.gitconfig-work
+; Then you can set a different email, etc. for just work projects
+[includeIf "gitdir/i:~/work*/**"]
+	path = .gitconfig-work

@@ -1,0 +1,40 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific environment
+export PATH="$HOME/.local/bin:$PATH"
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+	for rc in ~/.bashrc.d/*; do
+		if [ -f "$rc" ]; then
+			. "$rc"
+		fi
+	done
+fi
+unset rc
+
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+
+if command -v starship &>/dev/null; then
+	eval "$(starship init bash)"
+fi
+
+if command -v lsd &>/dev/null; then
+	alias ls='lsd'
+	alias la='lsd -A'
+	alias ll='lsd -lA'
+fi
+
+alias sudo='sudo '
+
+if command -v ssh-agent &>/dev/null; then
+	eval "$(ssh-agent -s)"
+fi
+
+# add Pulumi to the PATH
+export PATH=$PATH:$HOME/.pulumi/bin
