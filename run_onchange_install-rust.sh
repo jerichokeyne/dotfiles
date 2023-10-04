@@ -5,16 +5,21 @@ curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain stable -y
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Install tools
-RUSTC_WRAPPER="" cargo install sccache --locked
-cargo install cargo-binstall
+if ! [ -f "$HOME/.cargo/bin/sccache" ]; then
+	RUSTC_WRAPPER="" cargo install sccache --locked
+fi
+if ! [ -f "$HOME/.cargo/bin/cargo-binstall" ]; then
+	cargo install cargo-binstall
+fi
 cargo binstall -y \
 	rbw \
 	ripgrep \
 	starship \
 	fd-find \
 	lsd
-#cargo install kanidm_tools --version '1.1.0-beta.13'
-cargo install helix-term --git https://github.com/helix-editor/helix
+if ! [ -f "$HOME/.cargo/bin/hx" ]; then
+	cargo install helix-term --git https://github.com/helix-editor/helix
+fi
 
 # Setup helix
 mkdir -p ~/.config/helix

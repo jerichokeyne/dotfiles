@@ -23,6 +23,7 @@ flatpak install --user -y --noninteractive \
 	com.github.tchx84.Flatseal \
 	io.gitlab.librewolf-community \
 	org.mozilla.Thunderbird \
+	com.microsoft.Edge \
 	md.obsidian.Obsidian
 
 # Install fonts
