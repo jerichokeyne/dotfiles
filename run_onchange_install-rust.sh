@@ -16,6 +16,9 @@ cargo binstall -y \
 	ripgrep \
 	starship \
 	fd-find \
+	nu \
+  nu-completion-script \
+	nu_plugin_highlight \
 	lsd
 if ! [ -f "$HOME/.cargo/bin/hx" ]; then
 	cargo install helix-term --git https://github.com/helix-editor/helix
