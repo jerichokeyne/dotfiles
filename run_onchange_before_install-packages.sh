@@ -13,6 +13,8 @@ rpm-ostree install --idempotent --assumeyes \
 	python3-lsp-server \
 	python3-lsp-black \
 	kubernetes-client \
+	docker-compose \
+	moby-engine \
 	helm
 
 sudo rpm-ostree apply-live --allow-replacement

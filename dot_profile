@@ -1,2 +1,4 @@
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 export EDITOR=hx
+
+[ -S "$XDG_RUNTIME_DIR/podman/podman.sock" ] && export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
