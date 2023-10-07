@@ -1,0 +1,23 @@
+Host *
+	AddKeysToAgent yes
+	ForwardAgent yes
+
+Host github.houston.softwaregrp.net
+	User git
+	Hostname github.houston.softwaregrp.net
+	IdentityFile ~/.ssh/microfocus
+
+Host 137.65.144.88
+	User jkeyne
+	Hostname 137.65.144.88
+	IdentityFile ~/.ssh/id_ed25519
+
+Host jkeyne.dev
+	User debian
+	HostName jkeyne.dev
+	IdentityFile ~/.ssh/id_ed25519
+
+Host jericho.cc
+	User debian
+	HostName jericho.cc
+	IdentityFile ~/.ssh/id_ed25519
