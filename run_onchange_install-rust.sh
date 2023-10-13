@@ -17,6 +17,8 @@ cargo binstall -y \
 	starship \
 	fd-find \
 	nu \
+	swaycons \
+	persway \
 	lsd
 if ! [ -f "$HOME/.cargo/bin/hx" ]; then
 	cargo install helix-term --git https://github.com/helix-editor/helix

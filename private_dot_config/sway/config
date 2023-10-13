@@ -1,5 +1,6 @@
 ### Autostart
 exec_always foot --server
+exec_always swaycons
 
 ### Variables
 set $mod Mod4
@@ -10,6 +11,9 @@ set $up k
 set $down j
 set $rofi_cmd rofi -terminal '$term'
 set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
+
+### Fonts
+font pango:FiraCode Nerd Font 11
 
 ### Output configuration
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -133,3 +137,9 @@ bindsym $mod+r mode "resize"
 # the trick, it's all in the `wordexp(3)`.
 #
 include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
+
+# Picture-in-Picture
+for_window [title="Picture-in-Picture"] {
+    floating enable
+    sticky enable
+}
