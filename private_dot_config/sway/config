@@ -1,6 +1,9 @@
 ### Autostart
 exec_always foot --server
 exec_always swaycons
+exec_always sworkstyle
+
+exec_always persway daemon -d stack_main
 
 ### Variables
 set $mod Mod4
