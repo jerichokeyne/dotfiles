@@ -17,6 +17,11 @@ cargo binstall -y \
 	starship \
 	fd-find \
 	nu \
+	sway-workspace \
+	sworkstyle \
+	swaysome \
+	swayhide \
+	shikane \
 	swaycons \
 	persway \
 	lsd
