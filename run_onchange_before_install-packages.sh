@@ -15,9 +15,14 @@ rpm-ostree install --idempotent --assumeyes \
 	kubernetes-client \
 	docker-compose \
 	moby-engine \
+	wtype \
+	wl-clipboard \
 	helm
 
 sudo rpm-ostree apply-live --allow-replacement
+
+pipx install \
+	rofi-rbw
 
 # Install flatpaks
 flatpak remote-add --if-not-exists flathub --user https://dl.flathub.org/repo/flathub.flatpakrepo

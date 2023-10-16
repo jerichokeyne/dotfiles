@@ -28,6 +28,7 @@ output * bg /usr/share/backgrounds/default.png fill
 bindsym $mod+Shift+Return exec $term
 bindsym $mod+Shift+q kill
 bindsym $mod+p exec $menu
+bindsym $mod+o exec rofi-rbw
 floating_modifier $mod normal
 bindsym $mod+F5 reload
 bindsym $mod+Shift+Escape exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
