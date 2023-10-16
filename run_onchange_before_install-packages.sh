@@ -16,13 +16,13 @@ rpm-ostree install --idempotent --assumeyes \
 	docker-compose \
 	moby-engine \
 	wtype \
-	wl-clipboard \
 	helm
 
 sudo rpm-ostree apply-live --allow-replacement
 
-pipx install \
-	rofi-rbw
+pipx install --include-deps ansible
+pipx install ansible-lint
+pipx install rofi-rbw
 
 # Install flatpaks
 flatpak remote-add --if-not-exists flathub --user https://dl.flathub.org/repo/flathub.flatpakrepo
@@ -31,6 +31,8 @@ flatpak install --user -y --noninteractive \
 	io.gitlab.librewolf-community \
 	org.mozilla.Thunderbird \
 	com.microsoft.Edge \
+	org.qutebrowser.qutebrowser \
+	org.qutebrowser.qutebrowser.Userscripts \
 	md.obsidian.Obsidian
 
 # Install fonts
