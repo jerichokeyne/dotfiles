@@ -1,4 +1,5 @@
 # .bashrc
+. ~/.profile
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -38,3 +39,22 @@ fi
 
 # add Pulumi to the PATH
 export PATH=$PATH:$HOME/.pulumi/bin
+
+if [ -d ~/.asdf ]; then
+	. "$HOME/.asdf/asdf.sh"
+	. "$HOME/.asdf/completions/asdf.bash"
+fi
+
+if command -v zoxide &>/dev/null; then
+	eval "$(zoxide init bash)"
+fi
+
+if command -v pfsso &>/dev/null; then
+	alias pfsso='pfsso -a --tokenmode TOTP --username "jericho.keyne@microfocus.com" --hours 12'
+fi
+
+# fnm
+if command -v fnm &>/dev/null; then
+	export PATH="/home/jericho/.local/share/fnm:$PATH"
+	eval "$(fnm env)"
+fi
